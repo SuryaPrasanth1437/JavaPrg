@@ -1,0 +1,33 @@
+package program;
+
+class JavaPrg implements Cloneable
+{
+	int rollno;
+	String name;
+	JavaPrg(int rollno,String name)
+	{
+		this.rollno=rollno;
+		this.name=name;
+		
+	}
+	public Object clone() throws CloneNotSupportedException
+	{
+		return super.clone();
+		
+	}
+	public static void main(String[] args)
+	{
+		try
+		{
+			JavaPrg s1=new JavaPrg(100,"surya");
+			JavaPrg s2=(JavaPrg) s1.clone();
+			System.out.println(s1.rollno+" "+s1.name);
+			System.out.println(s2.rollno+" "+s2.name);
+		}
+		catch(CloneNotSupportedException c)
+		{
+			
+		}
+	}
+	
+}
